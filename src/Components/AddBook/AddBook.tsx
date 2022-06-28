@@ -1,10 +1,31 @@
-import React from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import {Button} from "../Button";
 import {NavLink} from "react-router-dom";
+import {Input} from "../Input";
+import {useDispatch, useSelector} from "react-redux";
+import {addBookAC, BookType} from "../../redux/books-reducer";
+import {v1} from "uuid";
 
 export const AddBook = () => {
 
-    const onClickHandler = () => {
+    const dispatch = useDispatch()
+    const[title, setTitle] = useState('')
+    const[author, setAuthor] = useState('')
+    const[year, setYear] = useState('')
+    const[image, setImage] = useState('')
+    let newBook: any  = {
+
+    }
+    const onClickSave = () => {
+        newBook.id = v1()
+        newBook.title = title
+        newBook.author = author
+        newBook.year = year
+        newBook.image = image
+        dispatch(addBookAC(newBook))
+    }
+
+    const onClickCancel = () => {
 
     }
 
@@ -13,22 +34,22 @@ export const AddBook = () => {
             <h2>Добавление книги</h2>
             <div>
                 <div>Наименование</div>
-                <input type="text" />
+                <Input callBack={setTitle}/>
             </div>
             <div>
                 <div>Автор</div>
-                <input type="text" />
+                <Input callBack={setAuthor}/>
             </div>
             <div>
                 <div>Год выпуска</div>
-                <input type="text" />
+                <Input callBack={setYear}/>
             </div>
             <div>
                 <div>Изображение</div>
-                <input type="text" />
+                <Input callBack={setImage}/>
             </div>
-            <Button callBack={onClickHandler} name={'Сохранить'}/>
-            <div><NavLink to={'/'}><Button callBack={onClickHandler} name={'Отменить'}/></NavLink></div>
+            <Button callBack={onClickSave} name={'Сохранить'}/>
+            <div><NavLink to={'/'}><Button callBack={onClickCancel} name={'Отменить'}/></NavLink></div>
         </div>
     );
 };
