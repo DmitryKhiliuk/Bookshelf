@@ -1,0 +1,7 @@
+.bookItem {
+    display: flex;
+}
+img {
+    width: 100px;
+    height: 160px;
+}
