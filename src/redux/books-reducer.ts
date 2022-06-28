@@ -8,7 +8,7 @@ export type BookType = {
     image: string
 }
 
-export type ActionType = addBookACType
+export type ActionType = addBookACType | removeBookACType
 
 const initialState: BookType[] = [
     {id:v1(), title: 'JS and JQuery', author: 'David Sower', year: '2016', image: 'https://rust.litnet.com/uploads/covers/220/1618119063_65.jpg'},
@@ -18,8 +18,10 @@ const initialState: BookType[] = [
 export const booksReducer = (state:BookType[] = initialState, action: ActionType):BookType[] => {
     switch (action.type) {
         case "ADD-BOOK": {
-            debugger
             return [action.newBook, ...state]
+        }
+        case "REMOVE-BOOK": {
+            return state.filter((b) => b.id !== action.id)
         }
     }
     return state
@@ -30,5 +32,12 @@ export const addBookAC = (newBook:any) => {
     return {
         type: 'ADD-BOOK',
         newBook
-    }
+    } as const
+}
+export type removeBookACType = ReturnType<typeof removeBookAC>
+export const removeBookAC = (id:string) => {
+    return {
+        type: 'REMOVE-BOOK',
+        id
+    } as const
 }

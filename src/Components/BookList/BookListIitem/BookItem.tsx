@@ -1,8 +1,9 @@
 import React from 'react';
-import {BookType} from "../../../redux/books-reducer";
+import {BookType, removeBookAC} from "../../../redux/books-reducer";
 import {Button} from "../../Button";
 import s from "./BookListItem.module.css"
 import {NavLink} from "react-router-dom";
+import {useDispatch} from "react-redux";
 
 
 export type BookItemType = {
@@ -11,8 +12,10 @@ export type BookItemType = {
 
 export const BookItem = (props: BookItemType) => {
 
-    const onClickHandler = () => {
+    const dispatch = useDispatch()
 
+    const onClickHandler = () => {
+        dispatch(removeBookAC(props.book.id))
     }
 
     return (
