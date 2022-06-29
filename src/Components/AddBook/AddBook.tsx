@@ -56,8 +56,8 @@ export const AddBook = (props:AddBookType) => {
                 </div>
             </div>
                 <div className={s.editBook__alignment}>
-                    <div className={s.editBook__button}><NavLink to={'/'}><Button callBack={onClickSave} name={'Сохранить'}/></NavLink></div>
-                    <div className={s.editBook__button}><NavLink to={'/'}><Button callBack={onClickCancel} name={'Отменить'}/></NavLink></div>
+                    <div className={s.editBook__button}><NavLink to={'/Bookshelf'}><Button callBack={onClickSave} name={'Сохранить'}/></NavLink></div>
+                    <div className={s.editBook__button}><NavLink to={'/Bookshelf'}><Button callBack={onClickCancel} name={'Отменить'}/></NavLink></div>
                 </div>
 
         </div>
