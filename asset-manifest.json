@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Bookshelf/static/css/main.44dad869.css",
-    "main.js": "/Bookshelf/static/js/main.79bc9c9e.js",
-    "static/js/787.1f17f9c7.chunk.js": "/Bookshelf/static/js/787.1f17f9c7.chunk.js",
-    "static/media/2423.jpg": "/Bookshelf/static/media/2423.c07818b606c0e50f74b6.jpg",
-    "index.html": "/Bookshelf/index.html",
-    "main.44dad869.css.map": "/Bookshelf/static/css/main.44dad869.css.map",
-    "main.79bc9c9e.js.map": "/Bookshelf/static/js/main.79bc9c9e.js.map",
-    "787.1f17f9c7.chunk.js.map": "/Bookshelf/static/js/787.1f17f9c7.chunk.js.map"
+    "main.css": "/bookshelf/static/css/main.44dad869.css",
+    "main.js": "/bookshelf/static/js/main.11ef02ef.js",
+    "static/js/787.1f17f9c7.chunk.js": "/bookshelf/static/js/787.1f17f9c7.chunk.js",
+    "static/media/2423.jpg": "/bookshelf/static/media/2423.c07818b606c0e50f74b6.jpg",
+    "index.html": "/bookshelf/index.html",
+    "main.44dad869.css.map": "/bookshelf/static/css/main.44dad869.css.map",
+    "main.11ef02ef.js.map": "/bookshelf/static/js/main.11ef02ef.js.map",
+    "787.1f17f9c7.chunk.js.map": "/bookshelf/static/js/787.1f17f9c7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.44dad869.css",
-    "static/js/main.79bc9c9e.js"
+    "static/js/main.11ef02ef.js"
   ]
 }
