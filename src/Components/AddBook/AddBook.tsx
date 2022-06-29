@@ -1,9 +1,9 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {useState} from 'react';
 import {Button} from "../Button";
 import {NavLink} from "react-router-dom";
 import {Input} from "../Input";
-import {useDispatch, useSelector} from "react-redux";
-import {addBookAC, BookType} from "../../redux/books-reducer";
+import {useDispatch} from "react-redux";
+import {addBookAC} from "../../redux/books-reducer";
 import {v1} from "uuid";
 
 export const AddBook = () => {
@@ -34,21 +34,21 @@ export const AddBook = () => {
             <h2>Добавление книги</h2>
             <div>
                 <div>Наименование</div>
-                <Input callBack={setTitle}/>
+                <Input callBack={setTitle} value={title}/>
             </div>
             <div>
                 <div>Автор</div>
-                <Input callBack={setAuthor}/>
+                <Input callBack={setAuthor} value={author}/>
             </div>
             <div>
                 <div>Год выпуска</div>
-                <Input callBack={setYear}/>
+                <Input callBack={setYear} value={year}/>
             </div>
             <div>
                 <div>Изображение</div>
-                <Input callBack={setImage}/>
+                <Input callBack={setImage} value={image}/>
             </div>
-            <Button callBack={onClickSave} name={'Сохранить'}/>
+            <div><NavLink to={'/'}><Button callBack={onClickSave} name={'Сохранить'}/></NavLink></div>
             <div><NavLink to={'/'}><Button callBack={onClickCancel} name={'Отменить'}/></NavLink></div>
         </div>
     );

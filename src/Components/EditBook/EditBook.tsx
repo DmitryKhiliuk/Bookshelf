@@ -1,17 +1,42 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button} from "../Button";
-import {NavLink} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {NavLink, useParams} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {BookType, editBookAC} from "../../redux/books-reducer";
+import {Input} from "../Input";
 import {AppRootStateType} from "../../redux/store";
-import {BookType} from "../../redux/books-reducer";
 
-type EditBookType = {
 
-}
 
 export const EditBook = () => {
 
-    const onClickHandler = () => {
+    const dispatch = useDispatch()
+    const {bookId} = useParams()
+    const books = useSelector<AppRootStateType, BookType[]>(state => state.books)
+    console.log('bookId: ', bookId)
+    const currentBook = books.find((book) => book.id === bookId )
+
+    const[title, setTitle] = useState(currentBook && currentBook.title)
+    const[author, setAuthor] = useState(currentBook && currentBook.author)
+    const[year, setYear] = useState(currentBook && currentBook.year)
+    const[image, setImage] = useState(currentBook && currentBook.image)
+
+    let newBook: any  = {
+
+    }
+
+    const onClickSave = () => {
+        newBook.id = bookId
+        newBook.title = title
+        newBook.author = author
+        newBook.year = year
+        newBook.image = image
+        dispatch(editBookAC(newBook.id, newBook))
+
+    }
+
+
+    const onClickCancel = () => {
 
     }
 
@@ -21,22 +46,25 @@ export const EditBook = () => {
             <h2>Редактирование книги</h2>
             <div>
                 <div>Наименование</div>
-                <input type="text"/>
+                <Input callBack={setTitle} value={title}/>
             </div>
             <div>
                 <div>Автор</div>
-                <input type="text" />
+                <Input callBack={setAuthor} value={author}/>
             </div>
             <div>
                 <div>Год выпуска</div>
-                <input type="text" />
+                <Input callBack={setYear} value={year}/>
             </div>
             <div>
                 <div>Изображение</div>
-                <input type="text" />
+                <Input callBack={setImage} value={image}/>
             </div>
-            <Button callBack={onClickHandler} name={'Сохранить'}/>
-            <div><NavLink to={'/'}><Button callBack={onClickHandler} name={'Отменить'}/></NavLink></div>
+            {/*<div>
+                {currentBook && JSON.stringify(currentBook, null, 2)}
+            </div>*/}
+            <div><NavLink to={'/'}><Button callBack={onClickSave} name={'Сохранить'}/></NavLink></div>
+            <div><NavLink to={'/'}><Button callBack={onClickCancel} name={'Отменить'}/></NavLink></div>
         </div>
     );
 };

@@ -4,6 +4,7 @@ import React, {ChangeEvent} from 'react';
 type InputType = {
 
     callBack: (value: string) => void
+    value: string | undefined
 }
 
 
@@ -15,7 +16,7 @@ export const Input = (props:InputType) => {
 
     return (
         <div>
-            <input type="text" onChange={onChangeHandler} />
+            <input type="text" onChange={onChangeHandler} value={props.value}/>
         </div>
     );
 };

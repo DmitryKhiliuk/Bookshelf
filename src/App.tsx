@@ -7,16 +7,18 @@ import {MainPage} from "./Components/MainPage/MainPage";
 import {BookList} from "./Components/BookList/BookList";
 import {EditBook} from "./Components/EditBook/EditBook";
 
+
 function App() {
+
   return (
     <BrowserRouter>
         <div className="App">
             <MainPage/>
             <div>
                 <Routes>
-                    <Route path={'/'} element={<BookList/>}/>
+                    <Route path={'/'} element={<BookList />}/>
                     <Route path={'/add-book'} element={<AddBook/>}/>
-                    <Route path={'/edit-book'} element={<EditBook/>}/>
+                    <Route path={'/edit-book/:bookId'} element={<EditBook />}/>
                 </Routes>
             </div>
         </div>

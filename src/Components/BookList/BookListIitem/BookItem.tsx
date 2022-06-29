@@ -8,15 +8,22 @@ import {useDispatch} from "react-redux";
 
 export type BookItemType = {
     book: BookType
+
 }
 
 export const BookItem = (props: BookItemType) => {
 
     const dispatch = useDispatch()
 
-    const onClickHandler = () => {
+    const onClickDelete = () => {
         dispatch(removeBookAC(props.book.id))
     }
+
+    const onClickEdit = () => {
+
+    }
+
+
 
     return (
         <div className={s.bookItem}>
@@ -27,8 +34,12 @@ export const BookItem = (props: BookItemType) => {
                 <div>{props.book.year}</div>
             </div>
             <div>
-                <div><NavLink to={'/edit-book'}><Button callBack={onClickHandler} name={'Редактировать'}/></NavLink></div>
-                <Button callBack={onClickHandler} name={'Удалить'}/>
+                <div>
+                    <NavLink to={`/edit-book/${props.book.id}`}>
+                        <Button callBack={onClickEdit} name={'Редактировать'}/>
+                    </NavLink>
+                </div>
+                <Button callBack={onClickDelete} name={'Удалить'}/>
             </div>
         </div>
     );
