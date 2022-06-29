@@ -11,8 +11,10 @@ export type BookType = {
 export type ActionType = addBookACType | removeBookACType | editBookACType
 
 const initialState: BookType[] = [
-    {id:v1(), title: 'JS and JQuery', author: 'David Sower', year: '2016', image: 'https://rust.litnet.com/uploads/covers/220/1618119063_65.jpg'},
-    {id:v1(), title: 'How to shit in a suitcase', author: 'VVP', year: '2022', image: 'https://img4.labirint.ru/rc/83ce162e5637da27a4513dd034f6db9d/363x561q80/books81/803832/cover.jpg?1620321928'},
+    {id:v1(), title: 'React: современные шаблоны для разработки ', author: 'Алекс Бэнкс, Ева Порселло', year: '2021', image: 'https://s4-goods.ozstatic.by/480/537/52/101/101052537_0_React_sovremennie_shabloni_dlya_razrabotki_prilozheniy_Aleks_Benks_Eva_Porsello.jpg'},
+    {id:v1(), title: 'JavaScript с нуля', author: 'Кирупа Чиннатамби', year: '2021', image: 'https://s2-goods.ozstatic.by/480/443/28/101/101028443_0_JavaScript_s_nulya_Kirupa_CHinnatambi.jpg'},
+    {id:v1(), title: 'Turbo Pascal', author: 'Валерий Фаронов', year: '2021', image: 'https://s3-goods.ozstatic.by/480/884/110/101/101110884_0_Turbo_Pascal_Uchebnoe_posobie_Valeriy_Faronov.jpg'},
+    {id:v1(), title: 'Биполярное расстройство', author: 'Е. Касьянов', year: '2022', image: 'https://s2-goods.ozstatic.by/480/803/109/101/101109803_0_Bipolyarnoe_rasstroystvo_gid_po_vizhivaniyu_dlya_teh_kto_chasto_ne_vidit_beloy_polosi_Masha_Pushkina_E_Kasyanov.jpg'},
 ]
 
 export const booksReducer = (state:BookType[] = initialState, action: ActionType):BookType[] => {

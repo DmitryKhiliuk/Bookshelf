@@ -1,0 +1,66 @@
+.bookItem {
+    display: flex;
+    justify-content: space-around;
+
+}
+img {
+    width: 100px;
+    height: 160px;
+}
+
+.bookItem__text {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: rgba(40,44,52,0.8);
+    color: gainsboro;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.author {
+    font-weight: 700;
+}
+
+.bookItem__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.bookItem__button__delete {
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 500px) {
+    .bookItem {
+        flex-wrap: wrap;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .bookItem__button {
+        margin-bottom: 5px;
+    }
+}
+
+/*@media screen and (max-width: 645px) {
+    .bookItem__text {
+        width: 50%;
+    }
+}*/
+
+/*
+@media screen and (max-width: 525px) {
+    .bookItem__text {
+        width: 50%;
+    }
+}*/

@@ -1,0 +1,15 @@
+.button {
+    width: 150px;
+    height: 35px;
+    color: gainsboro;
+    cursor: pointer;
+    background: rgba(40,44,52,0.8);
+    font-size: 15px;
+
+}
+
+@media screen and (max-width: 500px) {
+    .button {
+        width: 300px;
+    }
+}

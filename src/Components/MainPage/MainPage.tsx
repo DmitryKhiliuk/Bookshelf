@@ -9,8 +9,8 @@ export const MainPage = () => {
 
     }
     return (
-        <div>
-            <h1>Книжная полка</h1>
+        <div className={s.mainPage}>
+            <h1 className={s.title}>Книжная полка</h1>
             <div><NavLink to={'/add-book'}><Button callBack={addBookHandler} name={'Добавить книгу'}/></NavLink></div>
         </div>
     );
