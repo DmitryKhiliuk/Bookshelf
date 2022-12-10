@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Тестовое задание «Книжная полка»
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Задание
+Разработать приложение «Книжная полка», позволяющее просматривать списки книг, добавлять, редактировать и удалять книги.
 
-## Available Scripts
+### Необходимая функциональность
+● Отображение списка книг
+Каждая книга отображается в строке таблицы, в конце каждой строки расположены кнопки редактирования или удаления книги из списка.
 
-In the project directory, you can run:
+#### Комментарий 
+Каждая книга имеет следующие поля: 
+* Изображение книги; 
+* Автор книги (строковое значение, без ограничений); 
+* Название книги (строковое значение, без ограничений);
+* Год выпуска (число, не больше 2022).
 
-### `yarn start`
+● Редактирование книги 
+При клике по кнопке “Редактировать” в строке книга, открывается форма редактирования, в которой уже подставлены данные о редактируемой книги. Форма должна иметь кнопки “Сохранить” и “Отменить”. При клике по первой, данные о книги сохраняются, данные в таблице обновляются. При клике по второй данные возвращаются к исходном состоянию, даже если были внесены правки. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Комментарий 
+Изображение книги — ссылка на изображение в Интернете или имя файла, если изображения лежат локально. Необходимости реализовывать загрузку изображений нет.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+● Добавление новой книги: 
+При клике по кнопке “Добавить книгу” открывается пустая форма, в которой можно указать данные о книги. Форма должна иметь кнопки “Сохранить” и “Отменить”. При клике по первой в список книг добавляется новая книга с введенными данными. При клике на “Отменить” форма закрывается, новая книга на добавляется, список книг остается без изменений.
 
-### `yarn test`
+#### Комментарий 
+Изображение книги — ссылка на изображение в Интернете или имя файла, если они лежат локально. Необходимости реализовывать загрузки изображений нет.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+● Удаление книги 
+При клике по кнопке “Удалить” книга удаляется, список книг обновляется.
 
-### `yarn build`
+### Условия выполнения
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+● При выполнении использовать HTML, CSS, JavaScript. Допускается использование jQuery и CSS-препроцессоров;
+● Выполнить можно как задание полностью, так и его часть;
+● Верстку интерфейса необходимо выполнить самостоятельно (использование Twitter Bootstrap, Foundation и др. нежелательно);
+● Нельзя использовать готовые решения для отображения и работы со списками;
+● Использование JS-фреймворков допускается, но не является обязательным условием;
+● Разрабатывать backend-часть не требуется;
+● Разрабатывать сохранение книг не требуется (то есть решение является приемлемым, если после перезагрузки страницы отображается начальный список книг без учета добавления / редактирования / удаления до перезагрузки);
+● Результат прислать в виде архива, либо выложить в любой публичный репозиторий.
