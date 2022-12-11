@@ -5,6 +5,7 @@ import {BookItem} from "./BookListIitem/BookItem";
 import {BookType} from "../../redux/books-reducer";
 import s from './BookList.module.css'
 
+
 type BookListType = {
     background: {backgroundImage: string}
 }

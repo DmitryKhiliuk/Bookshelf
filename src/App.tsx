@@ -17,18 +17,16 @@ function App() {
     }
 
   return (
-    <BrowserRouter>
         <div className="App">
             <MainPage/>
             <div>
                 <Routes>
-                    <Route path={'/Bookshelf'} element={<BookList background={background}/>}/>
+                    <Route path={'/'} element={<BookList background={background}/>}/>
                     <Route path={'/add-book'} element={<AddBook background={background}/>}/>
                     <Route path={'/edit-book/:bookId'} element={<EditBook background={background}/>}/>
                 </Routes>
             </div>
         </div>
-    </BrowserRouter>
   );
 }
 

@@ -33,7 +33,7 @@ export const booksReducer = (state:BookType[] = initialState, action: ActionType
 }
 
 export type addBookACType = ReturnType<typeof addBookAC>
-export const addBookAC = (newBook:any) => {
+export const addBookAC = (newBook:BookType) => {
     return {
         type: 'ADD-BOOK',
         newBook
@@ -47,7 +47,7 @@ export const removeBookAC = (id:string) => {
     } as const
 }
 export type editBookACType = ReturnType<typeof editBookAC>
-export const editBookAC = (id:string, newBook:any) => {
+export const editBookAC = (id:string, newBook:BookType) => {
     return {
         type: 'EDIT-BOOK',
         id,
