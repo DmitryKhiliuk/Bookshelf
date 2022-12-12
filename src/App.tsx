@@ -22,7 +22,7 @@ function App() {
             <div>
                 <Routes>
                     <Route path={'/'} element={<BookList background={background}/>}/>
-                    <Route path={'/add-book'} element={<AddBook background={background}/>}/>
+                    <Route path={'/add-book'} data-testid={'add-link'} element={<AddBook background={background}/>}/>
                     <Route path={'/edit-book/:bookId'} element={<EditBook background={background}/>}/>
                 </Routes>
             </div>
