@@ -1,9 +1,11 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import App from './App';
 import {MemoryRouter} from "react-router-dom";
 import * as reduxHooks from "react-redux";
 import {AppRootStateType} from "./redux/store";
+import {MainPage} from "./Components/MainPage/MainPage";
+import userEvent from "@testing-library/user-event";
 
 jest.mock('react-redux')
 const mockedSelector = jest.spyOn(reduxHooks, 'useSelector')
@@ -31,15 +33,25 @@ describe('app test', () => {
 
             ]
         }
+        mockedSelector.mockReturnValue(startState.books)
     })
-  it('renders learn react link', () => {
-    mockedSelector.mockReturnValue(startState.books)
-    const view = render(
-        <MemoryRouter>
-            <App />
-        </MemoryRouter>
-    );
-    expect(view).toMatchSnapshot()
-  });
+    it('render app component', () => {
+        const view = render(
+            <MemoryRouter>
+                <App/>
+            </MemoryRouter>
+        );
+        expect(view).toMatchSnapshot()
+    });
+    it('add link test', () => {
+        render(
+            <MemoryRouter>
+                <App/>
+            </MemoryRouter>
+        )
+        const addLink = screen.getByText('Добавить книгу')
+        userEvent.click(addLink)
+        expect(screen.getByText('Добавление книги')).toBeInTheDocument()
+    })
 })
 
