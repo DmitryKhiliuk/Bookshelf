@@ -4,6 +4,7 @@ import {AppRootStateType} from "../../redux/store";
 import {BookItem} from "./BookListIitem/BookItem";
 import {BookType} from "../../redux/books-reducer";
 import s from './BookList.module.css'
+import {selectBooks} from "../../redux/selectors";
 
 
 type BookListType = {
@@ -14,7 +15,7 @@ export const BookList = (props:BookListType) => {
 
 
 
-    const books = useSelector<AppRootStateType, BookType[]>(state => state.books)
+    const books = useSelector<AppRootStateType, BookType[]>(selectBooks)
     return (
         <div className={s.bookList} style={props.background }>
             {

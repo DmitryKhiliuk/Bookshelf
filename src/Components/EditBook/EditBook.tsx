@@ -6,6 +6,7 @@ import {BookType, editBookAC} from "../../redux/books-reducer";
 import {Input} from "../Input";
 import {AppRootStateType} from "../../redux/store";
 import s from './EditBook.module.css'
+import {selectBooks} from "../../redux/selectors";
 
 type EditBookType = {
     background: {backgroundImage: string}
@@ -15,7 +16,7 @@ export const EditBook = (props: EditBookType) => {
 
     const dispatch = useDispatch()
     const {bookId} = useParams()
-    const books = useSelector<AppRootStateType, BookType[]>(state => state.books)
+    const books = useSelector<AppRootStateType, BookType[]>(selectBooks)
     console.log('bookId: ', bookId)
     const currentBook = books.find((book) => book.id === bookId )
 
