@@ -31,7 +31,7 @@ export const AddBook = (props:AddBookType) => {
     }
 
     const onClickCancel = () => {
-
+        console.log('cancel')
     }
 
     return (

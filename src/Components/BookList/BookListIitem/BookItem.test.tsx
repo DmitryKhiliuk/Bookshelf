@@ -5,8 +5,6 @@ import {BookType} from "../../../redux/books-reducer";
 import {MemoryRouter} from "react-router-dom";
 import * as reduxHooks from "react-redux";
 import userEvent from "@testing-library/user-event";
-import {MainPage} from "../../MainPage/MainPage";
-import App from "../../../App";
 
 
 jest.mock('react-redux')
