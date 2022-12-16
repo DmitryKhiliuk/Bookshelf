@@ -6,6 +6,7 @@ import * as reduxHooks from "react-redux";
 import {AppRootStateType} from "./redux/store";
 import {MainPage} from "./Components/MainPage/MainPage";
 import userEvent from "@testing-library/user-event";
+import {BookItem} from "./Components/BookList/BookListIitem/BookItem";
 
 jest.mock('react-redux')
 const mockedSelector = jest.spyOn(reduxHooks, 'useSelector')
@@ -52,6 +53,12 @@ describe('app test', () => {
         const addLink = screen.getByText('Добавить книгу')
         userEvent.click(addLink)
         expect(screen.getByText('Добавление книги')).toBeInTheDocument()
+    })
+    it('edit link test', () => {
+        render(<MemoryRouter><App/></MemoryRouter>)
+        const editLink = screen.getAllByText('Редактировать')
+        userEvent.click(editLink[0])
+        expect(screen.getByText('Редактирование книги')).toBeInTheDocument()
     })
 })
 

@@ -21,7 +21,7 @@ export const BookItem = (props: BookItemType) => {
     }
 
     const onClickEdit = () => {
-
+        console.log('edit book')
     }
 
 

@@ -1,12 +1,10 @@
-import {AppRootStateType} from "./store";
 import {addBookAC, booksReducer, BookType, editBookAC, removeBookAC} from "./books-reducer";
 
-let startState: AppRootStateType
+let startState: BookType[]
 
 describe('selected books', () => {
     beforeEach(() => {
-        startState = {
-            books: [
+        startState =  [
                 {
                     id: '1',
                     title: "Book",
@@ -24,7 +22,7 @@ describe('selected books', () => {
 
             ]
         }
-    })
+    )
     it('should add new book', () => {
         const newBook:BookType = {
             id:'3',
@@ -32,11 +30,11 @@ describe('selected books', () => {
             author: 'new writer',
             year: '2022',
             image: 'new url'}
-        const endState = booksReducer(startState.books, addBookAC(newBook))
+        const endState = booksReducer(startState, addBookAC(newBook))
         expect(endState.length).toBe(3)
     })
     it('should remove book', () => {
-        const endState = booksReducer(startState.books, removeBookAC('2'))
+        const endState = booksReducer(startState, removeBookAC('2'))
         expect(endState.length).toBe(1)
     })
     it('should edit book', () => {
@@ -46,9 +44,8 @@ describe('selected books', () => {
             author: 'new writer',
             year: '2022',
             image: 'new url'}
-        const endState = booksReducer(startState.books, editBookAC('1', newBook))
+        const endState = booksReducer(startState, editBookAC('1', newBook))
         expect(endState.length).toBe(2)
         expect(endState.find(book => book.id === newBook.id)!.year).toBe('2022')
     })
-
 })
