@@ -41,7 +41,7 @@ export const EditBook = (props: EditBookType) => {
 
 
     const onClickCancel = () => {
-
+        console.log('edit book')
     }
 
 

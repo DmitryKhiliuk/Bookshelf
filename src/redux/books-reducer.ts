@@ -8,9 +8,9 @@ export type BookType = {
     image: string
 }
 
-export type ActionType = addBookACType | removeBookACType | editBookACType
+export type ActionType = addBookACType | removeBookACType | editBookACType | testActionType
 
-const initialState: BookType[] = [
+export const initialState: BookType[] = [
     {id:v1(), title: 'React: современные шаблоны для разработки ', author: 'Алекс Бэнкс, Ева Порселло', year: '2021', image: 'https://s4-goods.ozstatic.by/480/537/52/101/101052537_0_React_sovremennie_shabloni_dlya_razrabotki_prilozheniy_Aleks_Benks_Eva_Porsello.jpg'},
     {id:v1(), title: 'JavaScript с нуля', author: 'Кирупа Чиннатамби', year: '2021', image: 'https://s2-goods.ozstatic.by/480/443/28/101/101028443_0_JavaScript_s_nulya_Kirupa_CHinnatambi.jpg'},
     {id:v1(), title: 'Turbo Pascal', author: 'Валерий Фаронов', year: '2021', image: 'https://s3-goods.ozstatic.by/480/884/110/101/101110884_0_Turbo_Pascal_Uchebnoe_posobie_Valeriy_Faronov.jpg'},
@@ -52,5 +52,12 @@ export const editBookAC = (id:string, newBook:BookType) => {
         type: 'EDIT-BOOK',
         id,
         newBook
+    } as const
+}
+
+export type testActionType = ReturnType<typeof testAC>
+export const testAC = () => {
+    return {
+        type: ''
     } as const
 }
